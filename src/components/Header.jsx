@@ -3,7 +3,7 @@ import { Disclosure} from '@headlessui/react'
 import { MoonIcon,SunIcon, MenuIcon, XIcon } from '@heroicons/react/solid'
 import logo from '../assets/logo.png'
 const navigation = [
-	{ name: 'Inicio', href: '#', current: true },
+	{ name: 'Inicio', href: '#', current: false },
   { name: 'Proyectos', href: '#', current: false },
   { name: 'Estudios', href: '#', current: false },
 	{ name: 'Tecnologias', href: '#', current: false },
@@ -15,7 +15,7 @@ function classNames(...classes) {
 
 export default function Header({ChangeTheme, theme}) {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-slate-50 dark:bg-zinc-800 sticky top-0 z-40">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ export default function Header({ChangeTheme, theme}) {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item.current ? 'bg-gray-900 text-white' : 'text-zinc-900 dark:text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -61,7 +61,7 @@ export default function Header({ChangeTheme, theme}) {
                 <button
                   type="button"
 									onClick={ChangeTheme}
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="bg-slate-100 dark:bg-gray-800 p-1 rounded-full text-amber-300 dark:text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
 									{theme ==="dark" ? <MoonIcon className="h-6 w-6" aria-hidden="true" /> : <SunIcon className="h-6 w-6" aria-hidden="true" />}
