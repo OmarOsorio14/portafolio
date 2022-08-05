@@ -3,13 +3,13 @@ import Card from './Card'
 import Title from './Title'
 import { proyects } from '../assets/proyects'
 
-export default function Proyects() {
+export default function Proyects({reference}) {
 	return (
-		<>
+		<div ref={reference}>
 			<Title title="Proyectos" />
 			<div className="flex flex-wrap my-8">
 				{proyects.map((proyect, index) => <Card key={index} proyect={proyect} />)}
 			</div>
-		</>
+		</div>
 	)
 }

@@ -3,17 +3,17 @@ import { Disclosure} from '@headlessui/react'
 import { MoonIcon,SunIcon, MenuIcon, XIcon } from '@heroicons/react/solid'
 import logo from '../assets/logo.png'
 const navigation = [
-	{ name: 'Inicio', href: '#', current: false },
-  { name: 'Proyectos', href: '#', current: false },
-  { name: 'Estudios', href: '#', current: false },
-	{ name: 'Tecnologias', href: '#', current: false },
+	{ name: 'Inicio', href: 'about', current: false },
+  { name: 'Proyectos', href: 'proyects', current: false },
+  { name: 'Estudios', href: 'studies', current: false },
+	{ name: 'Tecnologias', href: 'studies', current: false },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Header({ChangeTheme, theme}) {
+export default function Header({ChangeTheme,handleScroll, theme}) {
   return (
     <Disclosure as="nav" className="bg-slate-50 dark:bg-zinc-800 sticky top-0 z-40">
       {({ open }) => (
@@ -42,9 +42,9 @@ export default function Header({ChangeTheme, theme}) {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <button
                         key={item.name}
-                        href={item.href}
+                        onClick={() => handleScroll(item.href)}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-zinc-900 dark:text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
@@ -52,7 +52,7 @@ export default function Header({ChangeTheme, theme}) {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </div>

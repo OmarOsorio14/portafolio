@@ -3,9 +3,9 @@ import { logos } from '../assets/logos';
 import TecnologyLogo from '../components/TecnologyLogo'
 import Title from './Title';
 
-export default function Tecnologies() {
+export default function Tecnologies({reference}) {
 	return (
-		<div>
+		<div ref={reference} className="mb-10">
 			<Title title="Tecnologias"/>
 			<div className="flex flex-wrap">
 				{logos.map((logo,index) => <TecnologyLogo key={index} source={logo.source} name={logo.name} />)}
