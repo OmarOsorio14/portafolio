@@ -27,12 +27,19 @@ function App() {
 			setTheme("dark")
 		}
 	}
-	const handleScroll = (id)=>{
-		console.log(refs)
-		refs[id]?.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+	const handleScroll = (id, mobile)=>{
+		if(mobile){
+			refs[id]?.current.scrollIntoView({
+				behavior: "auto",
+				block: 'start',
+			});
+		}else{
+			refs[id]?.current.scrollIntoView({
+				behavior: "smooth",
+				block: 'start',
+			});
+		}
+		
 	}
 	useEffect(()=>{
 			makeRefs()		
@@ -41,7 +48,7 @@ function App() {
 		<div className={theme}>
 			<Header ChangeTheme={ChangeTheme} handleScroll={handleScroll} theme={theme} />
 			<div className="bg-slate-100 dark:bg-zinc-900 min-h-screen">
-				<div className="p-2 max-w-7xl mx-2 sm:mx-20 2xl:mx-auto sm:py-10">
+				<div className="px-2 max-w-7xl mx-2 sm:mx-20 2xl:mx-auto sm:py-10">
 					<About reference={refs["about"]}/>
 					<Proyects reference={refs["proyects"]} />
 					<Studies reference={refs["studies"]} />

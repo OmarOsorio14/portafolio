@@ -44,7 +44,7 @@ export default function Header({ChangeTheme,handleScroll, theme}) {
                     {navigation.map((item) => (
                       <button
                         key={item.name}
-                        onClick={() => handleScroll(item.href)}
+                        onClick={() => handleScroll(item.href, false)}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-zinc-900 dark:text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
@@ -76,10 +76,9 @@ export default function Header({ChangeTheme,handleScroll, theme}) {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  onClick={() => handleScroll(item.href,true)}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-zinc-900 dark:text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

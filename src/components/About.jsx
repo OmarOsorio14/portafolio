@@ -6,7 +6,7 @@ import Paragraph from './Paragraph'
 
 export default function About({reference}) {
 	return (
-		<div className="flex flex-col" ref={reference}>
+		<div className="flex flex-col pt-14" ref={reference}>
 			<Title title="Acerca de mi" />
 			<img src={photo} className="rounded-full shadow-md shadow-red-500/50 my-2 self-center w-[10rem] h-[10rem]" alt="" />
 			<Paragraph text="Hola, soy omar osorio, desarrollador de software, con reciente experiencia en el stack MERN (mongo, express, react, nodejs) durante el bootcamp de mindhub trabajando con la metodología ágil scrum.  Donde practique estas tecnologías durante 700 horas en un ambiente laboral simulado. También cuento con bases sólidas en distintos paradigmas de programación tales como: imperativo, declarativo, orientado a objetos y funcional. Además de lenguajes de programación como java, C++, JavaScript, Python y PHP gracias a mi formación universitaria en ingeniería de sistemas."/>

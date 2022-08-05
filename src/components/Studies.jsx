@@ -4,7 +4,7 @@ import Title from './Title'
 
 export default function Studies({reference}) {
 	return (
-		<div ref={reference}>
+		<div ref={reference} className="pt-14">
 			<Title title="Formacion academica" />
 			<ul className="list-disc ml-10 mt-4">
 				<Study date="ABRIL 2022 - AGOSTO -2022" title="full stack Developer MERN & Mobile Apps" academy="Mindhub LA" description="+700 Horas full-time utilizando metodologías ágiles (SCRUM),
